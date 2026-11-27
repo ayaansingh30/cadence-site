@@ -1,0 +1,83 @@
+/* Team Cadence styles. Edit colors here. */
+:root{--bg:#171c28;--panel:#202738;--text:#eef0f5;--muted:#a3abbd;--glow:#f5c978;--line:#323b52;
+--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--text);font:17px/1.65 var(--sans)}
+img{max-width:100%;display:block}
+a{color:var(--glow)}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15}
+h1{font-size:clamp(2.6rem,7vw,4.6rem)}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:12px}
+p{max-width:62ch;color:var(--muted)}
+section{padding:64px 0}
+.page-title{font-size:clamp(2.2rem,6vw,3.4rem)}
+
+header{border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:18px 24px 20px;max-width:1040px;margin:0 auto}
+.logo{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--text);text-decoration:none}
+nav ul{display:flex;gap:24px;list-style:none;padding:0}
+nav ul a{color:var(--muted);text-decoration:none}
+nav ul a:hover,nav ul a[aria-current]{color:var(--glow)}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 0}
+.hero p{margin:20px 0 28px;font-size:1.15rem}
+.hero img{border-radius:20px;box-shadow:0 0 90px rgba(245,201,120,.28);aspect-ratio:3/4;object-fit:cover}
+.btn{display:inline-block;background:var(--glow);color:#1b1608;padding:12px 24px;border-radius:999px;font:inherit;font-weight:600;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+
+.support{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:40px;margin-bottom:64px;text-align:center;box-shadow:0 0 60px rgba(245,201,120,.12)}
+.support p{margin:0 auto 24px}
+
+.intro{padding-bottom:32px}
+.proto{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:48px 0;border-top:1px solid var(--line)}
+.proto:nth-of-type(even) img{order:2}
+.proto img{border-radius:16px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.proto dl{margin-top:20px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px}
+.proto dd{color:var(--muted)}
+
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin-top:32px}
+.member{background:none;border:0;color:inherit;font:inherit;cursor:pointer;display:block;width:100%;padding:8px;text-align:center;border-radius:20px;transition:background .25s ease,transform .25s ease}
+.photo{width:140px;height:140px;border-radius:50%;margin:0 auto 14px;background:var(--panel);display:grid;place-items:center;font-family:var(--serif);font-size:2.4rem;color:var(--glow);overflow:hidden;transition:box-shadow .3s ease,transform .3s ease}
+.photo img{width:100%;height:100%;object-fit:cover}
+.member .name{display:block;font-family:var(--serif);font-size:1.2rem;font-weight:600}
+.member .role{display:block;color:var(--muted);font-size:.95rem;margin-top:4px}
+.member:hover,.member:focus-visible{background:rgba(245,201,120,.06);transform:translateY(-4px);outline:none}
+.member:hover .photo,.member:focus-visible .photo{box-shadow:0 0 12px rgba(245,201,120,.7),0 0 40px rgba(245,201,120,.4),0 0 80px rgba(245,201,120,.2);transform:scale(1.05)}
+.member:hover .name,.member:focus-visible .name{color:var(--glow)}
+@media(prefers-reduced-motion:reduce){.member,.photo{transition:none}.member:hover,.member:focus-visible,.member:hover .photo{transform:none}}
+
+dialog.bio{margin:auto;max-width:480px;width:calc(100% - 48px);background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:20px;padding:32px;box-shadow:0 0 80px rgba(245,201,120,.2)}
+dialog.bio::backdrop{background:rgba(10,13,20,.75)}
+dialog.bio p{margin:12px 0 24px}
+dialog.bio .close{background:var(--glow);color:#1b1608;border:0;border-radius:999px;padding:10px 24px;font:inherit;font-weight:600;cursor:pointer;transition:box-shadow .25s ease,transform .25s ease}
+dialog.bio .close:hover,dialog.bio .close:focus-visible{box-shadow:0 0 20px rgba(245,201,120,.6);transform:translateY(-2px)}
+
+form{display:grid;gap:16px;max-width:520px;margin-top:28px}
+label{display:grid;gap:6px}
+input,textarea{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:12px;font:inherit}
+textarea{min-height:140px;resize:none}
+.submitted input:invalid,
+.submitted textarea:invalid{border-color:#ff5a5f;box-shadow:0 0 0 3px rgba(255,90,95,.25)}
+#form-status{margin-top:16px;color:var(--glow)}
+
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.95rem}
+@media(max-width:760px){.hero,.proto{grid-template-columns:1fr;gap:28px}.proto:nth-of-type(even) img{order:0}}
+input:user-invalid,
+textarea:user-invalid{
+  border-color:#ff5a5f;
+  box-shadow:0 0 0 3px rgba(255,90,95,.25);
+}
+.submitted label:has(:invalid)::before{
+  content:"Please fill this in";
+  color:#ff5a5f;
+  font-size:.9rem;
+  order:1;
+}
+label input,
+label textarea{order:2}
+.submitted label:has(input[type="email"]:invalid)::before{
+  content:"Please enter a valid email";
+}
+.page-title + p{margin-top:28px !important}

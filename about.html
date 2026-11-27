@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Cadence</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💡</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><nav>
+  <a class="logo" href="/">Cadence</a>
+  <ul><li><a href="/">Home</a></li><li><a href="/prototypes">Prototypes</a></li><li><a href="/about" aria-current="page">About</a></li><li><a href="/contact">Contact</a></li></ul>
+</nav></header>
+<main class="wrap">
+<section>
+  <h1 class="page-title">About Team Cadence</h1>
+  <p style="margin-top:14px">We are five people building lamps from scratch. Each purchase helps us a ton! </p>
+
+  <!-- To add a photo: put it in the images folder, then replace the letter inside
+       <span class="photo"><img src="images/ayaan.jpg" alt="Ayaan"></span> with <span class="photo"><img src="images/ayaan.jpg" alt="Ayaan"></span> -->
+  <div class="team">
+  
+   <button class="member" data-open="bio-saina">
+    <span class="photo"><img src="images/saina.jpeg" alt="Saina"></span>
+    <span class="name">Saina</span>
+    <span class="role">Team Lead</span>
+  </button>
+
+    <button class="member" data-open="bio-ayaan">
+    <span class="photo"><img src="images/ayaan.jpeg" alt="Ayaan"></span>
+    <span class="name">Ayaan</span>
+    <span class="role">Programming Lead</span>
+  </button>
+  <button class="member" data-open="bio-Raunak">
+    <span class="photo"><img src="images/Raunak.jpeg" alt="Raunak"></span>
+    <span class="name">Raunak</span>
+    <span class="role">3D printing lead</span>
+  </button>
+  <button class="member" data-open="bio-vikranth">
+    <span class="photo"><img src="images/vikranth.jpg" alt="Vikranth"></span>
+    <span class="name">Vikranth</span>
+    <span class="role">Business lead</span>
+  </button>
+  <button class="member" data-open="bio-tanay">
+    <span class="photo"><img src="images/tanay.jpg" alt="Tanay"></span>
+    <span class="name">Tanay</span>
+    <span class="role">Mechanical Lead</span>
+  </button>
+  </div>
+
+<dialog class="bio" id="bio-ayaan">
+  <h2>Ayaan</h2>
+  <p>Ayaan is a freshman at Archbishop Mitty High School. He loves programming and knows C++, JavaScript, Java, Python, and more. Outside of coding, he plays guitar, loves music, and takes part in speech and debate, along with plenty of other activities.</p>
+  <button class="close">Close</button>
+</dialog>
+
+<dialog class="bio" id="bio-saina">
+  <h2>Saina</h2>
+  <p>Saina is a senior at Evergreen Valley High School. She loves art and design, which is one of the reasons she came up with the Cadence lamp. She also enjoys hanging out with her friends.</p>
+  <button class="close">Close</button>
+</dialog>
+
+<dialog class="bio" id="bio-Raunak">
+  <h2>Raunak</h2>
+  <p>Raunak is a junior at Lynbrook High School. He loves 3D printing and manages the 3D printing for all of our lamps.</p>
+  <button class="close">Close</button>
+</dialog>
+
+<dialog class="bio" id="bio-vikranth">
+  <h2>Vikranth</h2>
+  <p>Vikranth is a sophomore in Texas. He is interested in business and hopes to start his own company one day. On the team, he handles the business side of things.</p>
+  <button class="close">Close</button>
+</dialog>
+
+<dialog class="bio" id="bio-tanay">
+  <h2>Tanay</h2>
+  <p>Tanay is a freshman at Stratford Preparatory Blackford. He is interested in mechanical engineering and enjoys working with wires and planes.</p>
+  <button class="close">Close</button>
+</dialog>
+
+</section>
+</main>
+<footer><div class="wrap">&copy; 2026 Team Cadence</div></footer>
+<script>
+  document.querySelectorAll('[data-open]').forEach(btn => {
+    btn.addEventListener('click', () => document.getElementById(btn.dataset.open).showModal());
+  });
+  document.querySelectorAll('dialog.bio').forEach(dlg => {
+    dlg.querySelector('.close').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+  });
+</script>
+</body>
+</html>
